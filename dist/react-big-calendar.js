@@ -2695,7 +2695,7 @@
   	}
   } (react));
 
-  var React$1 = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
+  var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
   function _extends() {
     _extends = Object.assign ? Object.assign.bind() : function (target) {
@@ -3074,13 +3074,13 @@
           var propValue = _this2.props[propName];
           newProps[propName] = propValue !== undefined ? propValue : _this2.state.values[propName];
         });
-        return React$1.createElement(Component, _extends({}, props, newProps, this.handlers, {
+        return React.createElement(Component, _extends({}, props, newProps, this.handlers, {
           ref: innerRef || this.attachRef
         }));
       };
 
       return UncontrolledComponent;
-    }(React$1.Component);
+    }(React.Component);
 
     polyfill(UncontrolledComponent);
     UncontrolledComponent.displayName = "Uncontrolled(" + displayName + ")";
@@ -3096,9 +3096,9 @@
     });
     var WrappedComponent = UncontrolledComponent;
 
-    if (React$1.forwardRef) {
-      WrappedComponent = React$1.forwardRef(function (props, ref) {
-        return React$1.createElement(UncontrolledComponent, _extends({}, props, {
+    if (React.forwardRef) {
+      WrappedComponent = React.forwardRef(function (props, ref) {
+        return React.createElement(UncontrolledComponent, _extends({}, props, {
           innerRef: ref,
           __source: {
             fileName: _jsxFileName,
@@ -35492,7 +35492,7 @@
    * Built on top of `Popper.js`, the overlay component is
    * great for custom tooltip overlays.
    */
-  var Overlay = /*#__PURE__*/React$1.forwardRef(function (props, outerRef) {
+  var Overlay = /*#__PURE__*/React.forwardRef(function (props, outerRef) {
     var flip = props.flip,
         offset = props.offset,
         placement = props.placement,
@@ -35575,7 +35575,7 @@
           onEnter = props.onEnter,
           onEntering = props.onEntering,
           onEntered = props.onEntered;
-      child = /*#__PURE__*/React$1.createElement(Transition, {
+      child = /*#__PURE__*/React.createElement(Transition, {
         "in": props.show,
         appear: true,
         onExit: onExit,
@@ -35784,10 +35784,10 @@
         var allDay = accessors.allDay(event);
         var showAsAllDay = isAllDay || allDay || localizer.diff(start, localizer.ceil(end, 'day'), 'day') > 1;
         var userProps = getters.eventProp(event, start, end, selected);
-        var content = /*#__PURE__*/React$1.createElement("div", {
+        var content = /*#__PURE__*/React.createElement("div", {
           className: "rbc-event-content",
           title: tooltip || undefined
-        }, Event ? /*#__PURE__*/React$1.createElement(Event, {
+        }, Event ? /*#__PURE__*/React.createElement(Event, {
           event: event,
           continuesPrior: continuesPrior,
           continuesAfter: continuesAfter,
@@ -35797,9 +35797,9 @@
           slotStart: slotStart,
           slotEnd: slotEnd
         }) : title);
-        return /*#__PURE__*/React$1.createElement(EventWrapper, Object.assign({}, this.props, {
+        return /*#__PURE__*/React.createElement(EventWrapper, Object.assign({}, this.props, {
           type: "date"
-        }), /*#__PURE__*/React$1.createElement("div", Object.assign({}, props, {
+        }), /*#__PURE__*/React.createElement("div", Object.assign({}, props, {
           tabIndex: 0,
           style: _objectSpread2(_objectSpread2({}, userProps.style), style),
           className: clsx('rbc-event', className, userProps.className, {
@@ -35821,7 +35821,7 @@
       }
     }]);
     return EventCell;
-  }(React$1.Component);
+  }(React.Component);
 
   /**
    * Removes all key-value entries from the list cache.
@@ -38041,14 +38041,14 @@
     var style = {
       minWidth: width + width / 2
     };
-    return /*#__PURE__*/React$1.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       style: style,
       className: "rbc-overlay",
       ref: popperRef
-    }, /*#__PURE__*/React$1.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", {
       className: "rbc-overlay-header"
     }, localizer.format(slotStart, 'dayHeaderFormat')), events.map(function (event, idx) {
-      return /*#__PURE__*/React$1.createElement(EventCell, {
+      return /*#__PURE__*/React.createElement(EventCell, {
         key: idx,
         type: "popup",
         localizer: localizer,
@@ -38074,8 +38074,8 @@
       });
     }));
   }
-  var Popup = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
-    return /*#__PURE__*/React$1.createElement(Pop, Object.assign({}, props, {
+  var Popup = /*#__PURE__*/React.forwardRef(function (props, ref) {
+    return /*#__PURE__*/React.createElement(Pop, Object.assign({}, props, {
       popperRef: ref
     }));
   });
@@ -38130,7 +38130,7 @@
       events = overlay.events,
       date = overlay.date,
       end = overlay.end;
-    return /*#__PURE__*/React$1.createElement(Overlay$1, {
+    return /*#__PURE__*/React.createElement(Overlay$1, {
       rootClose: true,
       flip: true,
       show: true,
@@ -38139,7 +38139,7 @@
       target: overlay.target
     }, function (_ref2) {
       var props = _ref2.props;
-      return /*#__PURE__*/React$1.createElement(Popup, Object.assign({}, props, {
+      return /*#__PURE__*/React.createElement(Popup, Object.assign({}, props, {
         containerRef: containerRef,
         ref: popperRef,
         target: overlay.target,
@@ -38161,8 +38161,8 @@
       }));
     });
   }
-  var PopOverlay = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
-    return /*#__PURE__*/React$1.createElement(CalOverlay, Object.assign({}, props, {
+  var PopOverlay = /*#__PURE__*/React.forwardRef(function (props, ref) {
+    return /*#__PURE__*/React.createElement(CalOverlay, Object.assign({}, props, {
       containerRef: ref
     }));
   });
@@ -38748,7 +38748,7 @@
           startIdx = _this$state.startIdx,
           endIdx = _this$state.endIdx;
         var current = getNow();
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: "rbc-row-bg",
           ref: this.containerRef
         }, range.map(function (date, index) {
@@ -38756,11 +38756,11 @@
           var _getters$dayProp = getters.dayProp(date),
             className = _getters$dayProp.className,
             style = _getters$dayProp.style;
-          return /*#__PURE__*/React$1.createElement(Wrapper, {
+          return /*#__PURE__*/React.createElement(Wrapper, {
             key: index,
             value: date,
             range: range
-          }, /*#__PURE__*/React$1.createElement("div", {
+          }, /*#__PURE__*/React.createElement("div", {
             style: style,
             className: clsx('rbc-day-bg', className, selected && 'rbc-selected-cell', localizer.isSameDate(date, current) && 'rbc-today', currentDate && localizer.neq(currentDate, date, 'month') && 'rbc-off-range-bg')
           }));
@@ -38868,7 +38868,7 @@
       }
     }]);
     return BackgroundCells;
-  }(React$1.Component);
+  }(React.Component);
 
   /* eslint-disable react/prop-types */
   var EventRowMixin = {
@@ -38902,7 +38902,7 @@
         resizable = props.resizable;
       var continuesPrior = slotMetrics.continuesPrior(event);
       var continuesAfter = slotMetrics.continuesAfter(event);
-      return /*#__PURE__*/React$1.createElement(EventCell, {
+      return /*#__PURE__*/React.createElement(EventCell, {
         event: event,
         getters: getters,
         localizer: localizer,
@@ -38922,7 +38922,7 @@
     renderSpan: function renderSpan(slots, len, key) {
       var content = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : ' ';
       var per = Math.abs(len) / slots * 100 + '%';
-      return /*#__PURE__*/React$1.createElement("div", {
+      return /*#__PURE__*/React.createElement("div", {
         key: key,
         className: "rbc-row-segment"
         // IE10/11 need max-width. flex-basis doesn't respect box-sizing
@@ -38952,7 +38952,7 @@
           slots = _this$props.slotMetrics.slots,
           className = _this$props.className;
         var lastEnd = 1;
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: clsx(className, 'rbc-row')
         }, segments.reduce(function (row, _ref, li) {
           var event = _ref.event,
@@ -38970,7 +38970,7 @@
       }
     }]);
     return EventRow;
-  }(React$1.Component);
+  }(React.Component);
   EventRow.defaultProps = _objectSpread2({}, EventRowMixin.defaultProps);
 
   /**
@@ -40065,7 +40065,7 @@
             lastEnd = current = current + 1;
           }
         }
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: "rbc-row"
         }, row);
       }
@@ -40084,7 +40084,7 @@
         var _this = this;
         var localizer = this.props.localizer;
         var count = eventsInSlot(segments, slot);
-        return count ? /*#__PURE__*/React$1.createElement("button", {
+        return count ? /*#__PURE__*/React.createElement("button", {
           type: "button",
           key: 'sm_' + slot,
           className: clsx('rbc-button-link', 'rbc-show-more'),
@@ -40102,12 +40102,12 @@
       }
     }]);
     return EventEndingRow;
-  }(React$1.Component);
+  }(React.Component);
   EventEndingRow.defaultProps = _objectSpread2({}, EventRowMixin.defaultProps);
 
   var ScrollableWeekWrapper = function ScrollableWeekWrapper(_ref) {
     var children = _ref.children;
-    return /*#__PURE__*/React$1.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       className: "rbc-row-content-scroll-container"
     }, children);
   };
@@ -40278,22 +40278,22 @@
           range = _this$props4.range,
           renderHeader = _this$props4.renderHeader,
           showAllEvents = _this$props4.showAllEvents;
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: className,
           ref: _this.containerRef
-        }, /*#__PURE__*/React$1.createElement("div", {
+        }, /*#__PURE__*/React.createElement("div", {
           className: clsx('rbc-row-content', showAllEvents && 'rbc-row-content-scrollable')
-        }, renderHeader && /*#__PURE__*/React$1.createElement("div", {
+        }, renderHeader && /*#__PURE__*/React.createElement("div", {
           className: "rbc-row",
           ref: _this.headingRowRef
-        }, range.map(_this.renderHeadingCell)), /*#__PURE__*/React$1.createElement("div", {
+        }, range.map(_this.renderHeadingCell)), /*#__PURE__*/React.createElement("div", {
           className: "rbc-row",
           ref: _this.eventRowRef
-        }, /*#__PURE__*/React$1.createElement("div", {
+        }, /*#__PURE__*/React.createElement("div", {
           className: "rbc-row-segment"
-        }, /*#__PURE__*/React$1.createElement("div", {
+        }, /*#__PURE__*/React.createElement("div", {
           className: "rbc-event"
-        }, /*#__PURE__*/React$1.createElement("div", {
+        }, /*#__PURE__*/React.createElement("div", {
           className: "rbc-event-content"
         }, "\xA0"))))));
       };
@@ -40359,11 +40359,11 @@
           slotMetrics: metrics,
           resizable: resizable
         };
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: className,
           role: "rowgroup",
           ref: this.containerRef
-        }, /*#__PURE__*/React$1.createElement(BackgroundCells, {
+        }, /*#__PURE__*/React.createElement(BackgroundCells, {
           localizer: localizer,
           date: date,
           getNow: getNow,
@@ -40378,27 +40378,27 @@
           components: components,
           longPressThreshold: longPressThreshold,
           resourceId: resourceId
-        }), /*#__PURE__*/React$1.createElement("div", {
+        }), /*#__PURE__*/React.createElement("div", {
           className: clsx('rbc-row-content', showAllEvents && 'rbc-row-content-scrollable'),
           role: "row"
-        }, renderHeader && /*#__PURE__*/React$1.createElement("div", {
+        }, renderHeader && /*#__PURE__*/React.createElement("div", {
           className: "rbc-row ",
           ref: this.headingRowRef
-        }, range.map(this.renderHeadingCell)), /*#__PURE__*/React$1.createElement(ScrollableWeekComponent, null, /*#__PURE__*/React$1.createElement(WeekWrapper, Object.assign({
+        }, range.map(this.renderHeadingCell)), /*#__PURE__*/React.createElement(ScrollableWeekComponent, null, /*#__PURE__*/React.createElement(WeekWrapper, Object.assign({
           isAllDay: isAllDay
         }, eventRowProps), levels.map(function (segs, idx) {
-          return /*#__PURE__*/React$1.createElement(EventRow, Object.assign({
+          return /*#__PURE__*/React.createElement(EventRow, Object.assign({
             key: idx,
             segments: segs
           }, eventRowProps));
-        }), !!extra.length && /*#__PURE__*/React$1.createElement(EventEndingRow, Object.assign({
+        }), !!extra.length && /*#__PURE__*/React.createElement(EventEndingRow, Object.assign({
           segments: extra,
           onShowMore: this.handleShowMore
         }, eventRowProps))))));
       }
     }]);
     return DateContentRow;
-  }(React$1.Component);
+  }(React.Component);
   DateContentRow.defaultProps = {
     minRows: 0,
     maxRows: Infinity
@@ -40406,7 +40406,7 @@
 
   var Header = function Header(_ref) {
     var label = _ref.label;
-    return /*#__PURE__*/React$1.createElement("span", {
+    return /*#__PURE__*/React.createElement("span", {
       role: "columnheader",
       "aria-sort": "none"
     }, label);
@@ -40417,9 +40417,9 @@
       drilldownView = _ref.drilldownView,
       onDrillDown = _ref.onDrillDown;
     if (!drilldownView) {
-      return /*#__PURE__*/React$1.createElement("span", null, label);
+      return /*#__PURE__*/React.createElement("span", null, label);
     }
-    return /*#__PURE__*/React$1.createElement("button", {
+    return /*#__PURE__*/React.createElement("button", {
       type: "button",
       className: "rbc-button-link",
       onClick: onDrillDown,
@@ -40468,7 +40468,7 @@
         weeksEvents.sort(function (a, b) {
           return sortEvents(a, b, accessors, localizer);
         });
-        return /*#__PURE__*/React$1.createElement(DateContentRow, {
+        return /*#__PURE__*/React.createElement(DateContentRow, {
           key: weekIdx,
           ref: weekIdx === 0 ? _this.slotRowRef : undefined,
           container: _this.getContainer,
@@ -40510,10 +40510,10 @@
         var drilldownView = getDrilldownView(date);
         var label = localizer.format(date, 'dateFormat');
         var DateHeaderComponent = _this.props.components.dateHeader || DateHeader;
-        return /*#__PURE__*/React$1.createElement("div", Object.assign({}, props, {
+        return /*#__PURE__*/React.createElement("div", Object.assign({}, props, {
           className: clsx(className, isOffRange && 'rbc-off-range', isCurrent && 'rbc-current'),
           role: "cell"
-        }), /*#__PURE__*/React$1.createElement(DateHeaderComponent, {
+        }), /*#__PURE__*/React.createElement(DateHeaderComponent, {
           label: label,
           date: date,
           drilldownView: drilldownView,
@@ -40633,12 +40633,12 @@
           month = localizer.visibleDays(date, localizer),
           weeks = chunk_1(month, 7);
         this._weekCount = weeks.length;
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: clsx('rbc-month-view', className),
           role: "table",
           "aria-label": "Month View",
           ref: this.containerRef
-        }, /*#__PURE__*/React$1.createElement("div", {
+        }, /*#__PURE__*/React.createElement("div", {
           className: "rbc-row rbc-month-header",
           role: "row"
         }, this.renderHeaders(weeks[0])), weeks.map(this.renderWeek), this.props.popup && this.renderOverlay());
@@ -40653,10 +40653,10 @@
         var last = row[row.length - 1];
         var HeaderComponent = components.header || Header;
         return localizer.range(first, last, 'day').map(function (day, idx) {
-          return /*#__PURE__*/React$1.createElement("div", {
+          return /*#__PURE__*/React.createElement("div", {
             key: 'header_' + idx,
             className: "rbc-header"
-          }, /*#__PURE__*/React$1.createElement(HeaderComponent, {
+          }, /*#__PURE__*/React.createElement(HeaderComponent, {
             date: day,
             localizer: localizer,
             label: localizer.format(day, 'weekdayFormat')
@@ -40683,7 +40683,7 @@
             overlay: null
           });
         };
-        return /*#__PURE__*/React$1.createElement(PopOverlay, {
+        return /*#__PURE__*/React.createElement(PopOverlay, {
           overlay: overlay,
           accessors: accessors,
           localizer: localizer,
@@ -40778,7 +40778,7 @@
       }
     }]);
     return MonthView;
-  }(React$1.Component);
+  }(React.Component);
   MonthView.range = function (date, _ref3) {
     var localizer = _ref3.localizer;
     var start = localizer.firstVisibleDay(date, localizer);
@@ -41893,18 +41893,18 @@
           _this$props$component3 = _this$props$component2.timeSlotWrapper,
           Wrapper = _this$props$component3 === void 0 ? NoopWrapper : _this$props$component3;
         var groupProps = getters ? getters.slotGroupProp(group) : {};
-        return /*#__PURE__*/React$1.createElement(InViewPort, {
+        return /*#__PURE__*/React.createElement(InViewPort, {
           groupProps: groupProps,
           className: 'rbc-timeslot-group'
-        }, /*#__PURE__*/React$1.createElement("div", Object.assign({
+        }, /*#__PURE__*/React.createElement("div", Object.assign({
           className: "rbc-timeslot-group"
         }, groupProps), group.map(function (value, idx) {
           var slotProps = getters ? getters.slotProp(value, resource) : {};
-          return /*#__PURE__*/React$1.createElement(Wrapper, {
+          return /*#__PURE__*/React.createElement(Wrapper, {
             key: idx,
             value: value,
             resource: resource
-          }, /*#__PURE__*/React$1.createElement("div", Object.assign({}, slotProps, {
+          }, /*#__PURE__*/React.createElement("div", Object.assign({}, slotProps, {
             className: clsx('rbc-time-slot', slotProps.className)
           }), renderSlot && renderSlot(value, idx)));
         })));
@@ -41945,13 +41945,13 @@
       top = style.top,
       width = style.width,
       xOffset = style.xOffset;
-    var inner = [/*#__PURE__*/React$1.createElement("div", {
+    var inner = [/*#__PURE__*/React.createElement("div", {
       key: "1",
       className: "rbc-event-label"
-    }, label), /*#__PURE__*/React$1.createElement("div", {
+    }, label), /*#__PURE__*/React.createElement("div", {
       key: "2",
       className: "rbc-event-content"
-    }, Event ? /*#__PURE__*/React$1.createElement(Event, {
+    }, Event ? /*#__PURE__*/React.createElement(Event, {
       event: event,
       title: title
     }) : title)];
@@ -41965,9 +41965,9 @@
       width: stringifyPercent(width),
       height: stringifyPercent(height)
     }, rtl ? 'right' : 'left', stringifyPercent(xOffset)));
-    return /*#__PURE__*/React$1.createElement(EventWrapper, Object.assign({
+    return /*#__PURE__*/React.createElement(EventWrapper, Object.assign({
       type: "time"
-    }, props), /*#__PURE__*/React$1.createElement("div", {
+    }, props), /*#__PURE__*/React.createElement("div", {
       onClick: onClick,
       onDoubleClick: onDoubleClick,
       style: eventStyle,
@@ -41986,14 +41986,14 @@
       className = _ref.className,
       style = _ref.style,
       innerRef = _ref.innerRef;
-    return /*#__PURE__*/React$1.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       className: className,
       style: style,
       ref: innerRef
     }, children);
   };
-  var DayColumnWrapper$1 = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
-    return /*#__PURE__*/React$1.createElement(DayColumnWrapper, Object.assign({}, props, {
+  var DayColumnWrapper$1 = /*#__PURE__*/React.forwardRef(function (props, ref) {
+    return /*#__PURE__*/React.createElement(DayColumnWrapper, Object.assign({}, props, {
       innerRef: ref
     }));
   });
@@ -42055,7 +42055,7 @@
           }, format);
           var continuesPrior = startsBeforeDay || slotMetrics.startsBefore(start);
           var continuesAfter = startsAfterDay || slotMetrics.startsAfter(end);
-          return /*#__PURE__*/React$1.createElement(TimeGridEvent, {
+          return /*#__PURE__*/React.createElement(TimeGridEvent, {
             style: style,
             event: event,
             label: label,
@@ -42343,7 +42343,7 @@
           className = _dayProp.className,
           style = _dayProp.style;
         var DayColumnWrapperComponent = components.dayColumnWrapper || DayColumnWrapper$1;
-        return /*#__PURE__*/React$1.createElement(DayColumnWrapperComponent, {
+        return /*#__PURE__*/React.createElement(DayColumnWrapperComponent, {
           ref: this.containerRef,
           date: date,
           style: style,
@@ -42352,34 +42352,34 @@
           selecting && 'rbc-slot-selecting'),
           slotMetrics: slotMetrics
         }, slotMetrics.groups.map(function (grp, idx) {
-          return /*#__PURE__*/React$1.createElement(TimeSlotGroup, {
+          return /*#__PURE__*/React.createElement(TimeSlotGroup, {
             key: idx,
             group: grp,
             resource: resource,
             getters: getters,
             components: components
           });
-        }), /*#__PURE__*/React$1.createElement(EventContainer, {
+        }), /*#__PURE__*/React.createElement(EventContainer, {
           localizer: localizer,
           resource: resource,
           accessors: accessors,
           getters: getters,
           components: components,
           slotMetrics: slotMetrics
-        }, /*#__PURE__*/React$1.createElement("div", {
+        }, /*#__PURE__*/React.createElement("div", {
           className: clsx('rbc-events-container', rtl && 'rtl')
         }, this.renderEvents({
           events: this.props.backgroundEvents,
           isBackgroundEvent: true
         }), this.renderEvents({
           events: this.props.events
-        }))), selecting && /*#__PURE__*/React$1.createElement("div", {
+        }))), selecting && /*#__PURE__*/React.createElement("div", {
           className: "rbc-slot-selection",
           style: {
             top: top,
             height: height
           }
-        }, /*#__PURE__*/React$1.createElement("span", null, localizer.format(selectDates, 'selectRangeFormat'))), isNow && this.intervalTriggered && /*#__PURE__*/React$1.createElement("div", {
+        }, /*#__PURE__*/React.createElement("span", null, localizer.format(selectDates, 'selectRangeFormat'))), isNow && this.intervalTriggered && /*#__PURE__*/React.createElement("div", {
           className: "rbc-current-time-indicator",
           style: {
             top: "".concat(this.state.timeIndicatorPosition, "%")
@@ -42388,7 +42388,7 @@
       }
     }]);
     return DayColumn;
-  }(React$1.Component);
+  }(React.Component);
   DayColumn.defaultProps = {
     dragThroughEvents: true,
     timeslots: 2
@@ -42467,17 +42467,17 @@
       if (idx) return null; // don't return the first (0) idx
 
       var isNow = slotMetrics.dateIsInGroup(getNow(), idx);
-      return /*#__PURE__*/React$1.createElement("span", {
+      return /*#__PURE__*/React.createElement("span", {
         className: clsx('rbc-label', isNow && 'rbc-now')
       }, localizer.format(value, 'timeGutterFormat'));
     }, [slotMetrics, localizer, getNow]);
-    return /*#__PURE__*/React$1.createElement(TimeGutterWrapper, {
+    return /*#__PURE__*/React.createElement(TimeGutterWrapper, {
       slotMetrics: slotMetrics
-    }, /*#__PURE__*/React$1.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", {
       className: "rbc-time-gutter rbc-time-column",
       ref: gutterRef
     }, slotMetrics.groups.map(function (grp, idx) {
-      return /*#__PURE__*/React$1.createElement(TimeSlotGroup, {
+      return /*#__PURE__*/React.createElement(TimeSlotGroup, {
         key: idx,
         group: grp,
         resource: resource,
@@ -42487,15 +42487,15 @@
       });
     })));
   };
-  var TimeGutter$1 = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
-    return /*#__PURE__*/React$1.createElement(TimeGutter, Object.assign({
+  var TimeGutter$1 = /*#__PURE__*/React.forwardRef(function (props, ref) {
+    return /*#__PURE__*/React.createElement(TimeGutter, Object.assign({
       gutterRef: ref
     }, props));
   });
 
   var ResourceHeader = function ResourceHeader(_ref) {
     var label = _ref.label;
-    return /*#__PURE__*/React$1.createElement(React$1.Fragment, null, label);
+    return /*#__PURE__*/React.createElement(React.Fragment, null, label);
   };
 
   var TimeGridHeader = /*#__PURE__*/function (_React$Component) {
@@ -42528,7 +42528,7 @@
         var eventsToDisplay = resource ? events.filter(function (event) {
           return accessors.resource(event) === resourceId;
         }) : events;
-        return /*#__PURE__*/React$1.createElement(DateContentRow, {
+        return /*#__PURE__*/React.createElement(DateContentRow, {
           isAllDay: true,
           rtl: rtl,
           getNow: getNow,
@@ -42575,22 +42575,22 @@
           var _dayProp = dayProp(date),
             className = _dayProp.className,
             style = _dayProp.style;
-          var header = /*#__PURE__*/React$1.createElement(HeaderComponent, {
+          var header = /*#__PURE__*/React.createElement(HeaderComponent, {
             date: date,
             label: label,
             localizer: localizer
           });
-          return /*#__PURE__*/React$1.createElement("div", {
+          return /*#__PURE__*/React.createElement("div", {
             key: i,
             style: style,
             className: clsx('rbc-header', className, localizer.isSameDate(date, today) && 'rbc-today')
-          }, drilldownView ? /*#__PURE__*/React$1.createElement("button", {
+          }, drilldownView ? /*#__PURE__*/React.createElement("button", {
             type: "button",
             className: "rbc-button-link",
             onClick: function onClick(e) {
               return _this2.handleHeaderClick(date, drilldownView, e);
             }
-          }, header) : /*#__PURE__*/React$1.createElement("span", null, header));
+          }, header) : /*#__PURE__*/React.createElement("span", null, header));
         });
       }
     }, {
@@ -42621,36 +42621,36 @@
           style[rtl ? 'marginLeft' : 'marginRight'] = "".concat(scrollbarSize() - 1, "px");
         }
         var groupedEvents = resources.groupEvents(events);
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           style: style,
           ref: scrollRef,
           className: clsx('rbc-time-header', isOverflowing && 'rbc-overflowing')
-        }, /*#__PURE__*/React$1.createElement("div", {
+        }, /*#__PURE__*/React.createElement("div", {
           className: "rbc-label rbc-time-header-gutter",
           style: {
             width: width,
             minWidth: width,
             maxWidth: width
           }
-        }, TimeGutterHeader && /*#__PURE__*/React$1.createElement(TimeGutterHeader, null)), resources.map(function (_ref, idx) {
+        }, TimeGutterHeader && /*#__PURE__*/React.createElement(TimeGutterHeader, null)), resources.map(function (_ref, idx) {
           var _ref2 = _slicedToArray(_ref, 2),
             id = _ref2[0],
             resource = _ref2[1];
-          return /*#__PURE__*/React$1.createElement("div", {
+          return /*#__PURE__*/React.createElement("div", {
             className: "rbc-time-header-content",
             key: id || idx
-          }, resource && /*#__PURE__*/React$1.createElement("div", {
+          }, resource && /*#__PURE__*/React.createElement("div", {
             className: "rbc-row rbc-row-resource",
             key: "resource_".concat(idx)
-          }, /*#__PURE__*/React$1.createElement("div", {
+          }, /*#__PURE__*/React.createElement("div", {
             className: "rbc-header"
-          }, /*#__PURE__*/React$1.createElement(ResourceHeaderComponent, {
+          }, /*#__PURE__*/React.createElement(ResourceHeaderComponent, {
             index: idx,
             label: accessors.resourceTitle(resource),
             resource: resource
-          }))), /*#__PURE__*/React$1.createElement("div", {
+          }))), /*#__PURE__*/React.createElement("div", {
             className: "rbc-row rbc-time-header-cell".concat(range.length <= 1 ? ' rbc-time-header-cell-single-day' : '')
-          }, _this3.renderHeaderCells(range)), /*#__PURE__*/React$1.createElement(DateContentRow, {
+          }, _this3.renderHeaderCells(range)), /*#__PURE__*/React.createElement(DateContentRow, {
             isAllDay: true,
             rtl: rtl,
             getNow: getNow,
@@ -42680,7 +42680,7 @@
       }
     }]);
     return TimeGridHeader;
-  }(React$1.Component);
+  }(React.Component);
 
   /**
    * Returns the width of a given element.
@@ -42830,9 +42830,9 @@
         gutterWidth: undefined,
         isOverflowing: null
       };
-      _this.scrollRef = /*#__PURE__*/React$1.createRef();
-      _this.contentRef = /*#__PURE__*/React$1.createRef();
-      _this.containerRef = /*#__PURE__*/React$1.createRef();
+      _this.scrollRef = /*#__PURE__*/React.createRef();
+      _this.contentRef = /*#__PURE__*/React.createRef();
+      _this.containerRef = /*#__PURE__*/React.createRef();
       _this._scrollRatio = null;
       _this.gutterRef = /*#__PURE__*/reactExports.createRef();
       return _this;
@@ -42892,7 +42892,7 @@
             var daysBackgroundEvents = (groupedBackgroundEvents.get(id) || []).filter(function (event) {
               return localizer.inRange(date, accessors.start(event), accessors.end(event), 'day');
             });
-            return /*#__PURE__*/React$1.createElement(DayColumn, Object.assign({}, _this2.props, {
+            return /*#__PURE__*/React.createElement(DayColumn, Object.assign({}, _this2.props, {
               localizer: localizer,
               min: localizer.merge(date, min),
               max: localizer.merge(date, max),
@@ -42956,10 +42956,10 @@
         allDayEvents.sort(function (a, b) {
           return sortEvents(a, b, accessors, localizer);
         });
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: clsx('rbc-time-view', resources && 'rbc-time-view-resources'),
           ref: this.containerRef
-        }, /*#__PURE__*/React$1.createElement(TimeGridHeader, {
+        }, /*#__PURE__*/React.createElement(TimeGridHeader, {
           range: range,
           events: allDayEvents,
           width: width,
@@ -42984,11 +42984,11 @@
           onDrillDown: this.props.onDrillDown,
           getDrilldownView: this.props.getDrilldownView,
           resizable: resizable
-        }), this.props.popup && this.renderOverlay(), /*#__PURE__*/React$1.createElement("div", {
+        }), this.props.popup && this.renderOverlay(), /*#__PURE__*/React.createElement("div", {
           ref: this.contentRef,
           className: "rbc-time-content",
           onScroll: this.handleScroll
-        }, /*#__PURE__*/React$1.createElement(TimeGutter$1, {
+        }, /*#__PURE__*/React.createElement(TimeGutter$1, {
           date: start,
           ref: this.gutterRef,
           localizer: localizer,
@@ -43022,7 +43022,7 @@
             overlay: null
           });
         };
-        return /*#__PURE__*/React$1.createElement(PopOverlay, {
+        return /*#__PURE__*/React.createElement(PopOverlay, {
           overlay: overlay,
           accessors: accessors,
           localizer: localizer,
@@ -43125,7 +43125,7 @@
         var range = Day.range(date, {
           localizer: localizer
         });
-        return /*#__PURE__*/React$1.createElement(TimeGrid, Object.assign({}, props, {
+        return /*#__PURE__*/React.createElement(TimeGrid, Object.assign({}, props, {
           range: range,
           eventOffset: 10,
           localizer: localizer,
@@ -43137,7 +43137,7 @@
       }
     }]);
     return Day;
-  }(React$1.Component);
+  }(React.Component);
   Day.range = function (date, _ref) {
     var localizer = _ref.localizer;
     return [localizer.startOf(date, 'day')];
@@ -43191,7 +43191,7 @@
           enableAutoScroll = _this$props$enableAut === void 0 ? true : _this$props$enableAut,
           props = _objectWithoutProperties(_this$props, _excluded$3);
         var range = Week.range(date, this.props);
-        return /*#__PURE__*/React$1.createElement(TimeGrid, Object.assign({}, props, {
+        return /*#__PURE__*/React.createElement(TimeGrid, Object.assign({}, props, {
           range: range,
           eventOffset: 15,
           localizer: localizer,
@@ -43203,7 +43203,7 @@
       }
     }]);
     return Week;
-  }(React$1.Component);
+  }(React.Component);
   Week.defaultProps = TimeGrid.defaultProps;
   Week.navigate = function (date, action, _ref) {
     var localizer = _ref.localizer;
@@ -43271,7 +43271,7 @@
           enableAutoScroll = _this$props$enableAut === void 0 ? true : _this$props$enableAut,
           props = _objectWithoutProperties(_this$props, _excluded$2);
         var range = workWeekRange(date, this.props);
-        return /*#__PURE__*/React$1.createElement(TimeGrid, Object.assign({}, props, {
+        return /*#__PURE__*/React.createElement(TimeGrid, Object.assign({}, props, {
           range: range,
           eventOffset: 15,
           localizer: localizer,
@@ -43283,7 +43283,7 @@
       }
     }]);
     return WorkWeek;
-  }(React$1.Component);
+  }(React.Component);
   WorkWeek.defaultProps = TimeGrid.defaultProps;
   WorkWeek.range = workWeekRange;
   WorkWeek.navigate = Week.navigate;
@@ -43332,20 +43332,20 @@
         var start = accessors.start(event);
         var userProps = getters.eventProp(event, start, end, isSelected(event, selected));
         var dateLabel = idx === 0 && localizer.format(day, 'agendaDateFormat');
-        var first = idx === 0 ? /*#__PURE__*/React$1.createElement("td", {
+        var first = idx === 0 ? /*#__PURE__*/React.createElement("td", {
           rowSpan: events.length,
           className: "rbc-agenda-date-cell"
-        }, AgendaDate ? /*#__PURE__*/React$1.createElement(AgendaDate, {
+        }, AgendaDate ? /*#__PURE__*/React.createElement(AgendaDate, {
           day: day,
           label: dateLabel
         }) : dateLabel) : false;
-        return /*#__PURE__*/React$1.createElement("tr", {
+        return /*#__PURE__*/React.createElement("tr", {
           key: dayKey + '_' + idx,
           className: userProps.className,
           style: userProps.style
-        }, first, /*#__PURE__*/React$1.createElement("td", {
+        }, first, /*#__PURE__*/React.createElement("td", {
           className: "rbc-agenda-time-cell"
-        }, timeRangeLabel(day, event)), /*#__PURE__*/React$1.createElement("td", {
+        }, timeRangeLabel(day, event)), /*#__PURE__*/React.createElement("td", {
           className: "rbc-agenda-event-cell",
           onClick: function onClick(e) {
             return onSelectEvent && onSelectEvent(event, e);
@@ -43353,7 +43353,7 @@
           onDoubleClick: function onDoubleClick(e) {
             return onDoubleClickEvent && onDoubleClickEvent(event, e);
           }
-        }, Event ? /*#__PURE__*/React$1.createElement(Event, {
+        }, Event ? /*#__PURE__*/React.createElement(Event, {
           event: event,
           title: title
         }) : title));
@@ -43381,9 +43381,9 @@
       }
       if (localizer.gt(day, start, 'day')) labelClass = 'rbc-continues-prior';
       if (localizer.lt(day, end, 'day')) labelClass += ' rbc-continues-after';
-      return /*#__PURE__*/React$1.createElement("span", {
+      return /*#__PURE__*/React.createElement("span", {
         className: labelClass.trim()
-      }, TimeComponent ? /*#__PURE__*/React$1.createElement(TimeComponent, {
+      }, TimeComponent ? /*#__PURE__*/React.createElement(TimeComponent, {
         event: event,
         day: day,
         label: label
@@ -43418,29 +43418,29 @@
     events.sort(function (a, b) {
       return +accessors.start(a) - +accessors.start(b);
     });
-    return /*#__PURE__*/React$1.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       className: "rbc-agenda-view"
-    }, events.length !== 0 ? /*#__PURE__*/React$1.createElement(React$1.Fragment, null, /*#__PURE__*/React$1.createElement("table", {
+    }, events.length !== 0 ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("table", {
       ref: headerRef,
       className: "rbc-agenda-table"
-    }, /*#__PURE__*/React$1.createElement("thead", null, /*#__PURE__*/React$1.createElement("tr", null, /*#__PURE__*/React$1.createElement("th", {
+    }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", {
       className: "rbc-header",
       ref: dateColRef
-    }, messages.date), /*#__PURE__*/React$1.createElement("th", {
+    }, messages.date), /*#__PURE__*/React.createElement("th", {
       className: "rbc-header",
       ref: timeColRef
-    }, messages.time), /*#__PURE__*/React$1.createElement("th", {
+    }, messages.time), /*#__PURE__*/React.createElement("th", {
       className: "rbc-header"
-    }, messages.event)))), /*#__PURE__*/React$1.createElement("div", {
+    }, messages.event)))), /*#__PURE__*/React.createElement("div", {
       className: "rbc-agenda-content",
       ref: contentRef
-    }, /*#__PURE__*/React$1.createElement("table", {
+    }, /*#__PURE__*/React.createElement("table", {
       className: "rbc-agenda-table"
-    }, /*#__PURE__*/React$1.createElement("tbody", {
+    }, /*#__PURE__*/React.createElement("tbody", {
       ref: tbodyRef
     }, range.map(function (day, idx) {
       return renderDay(day, events, idx);
-    }))))) : /*#__PURE__*/React$1.createElement("span", {
+    }))))) : /*#__PURE__*/React.createElement("span", {
       className: "rbc-agenda-empty"
     }, messages.noEventsInRange));
   }
@@ -43528,22 +43528,22 @@
         var _this$props = this.props,
           messages = _this$props.localizer.messages,
           label = _this$props.label;
-        return /*#__PURE__*/React$1.createElement("div", {
+        return /*#__PURE__*/React.createElement("div", {
           className: "rbc-toolbar"
-        }, /*#__PURE__*/React$1.createElement("span", {
+        }, /*#__PURE__*/React.createElement("span", {
           className: "rbc-btn-group"
-        }, /*#__PURE__*/React$1.createElement("button", {
+        }, /*#__PURE__*/React.createElement("button", {
           type: "button",
           onClick: this.navigate.bind(null, navigate.TODAY)
-        }, messages.today), /*#__PURE__*/React$1.createElement("button", {
+        }, messages.today), /*#__PURE__*/React.createElement("button", {
           type: "button",
           onClick: this.navigate.bind(null, navigate.PREVIOUS)
-        }, messages.previous), /*#__PURE__*/React$1.createElement("button", {
+        }, messages.previous), /*#__PURE__*/React.createElement("button", {
           type: "button",
           onClick: this.navigate.bind(null, navigate.NEXT)
-        }, messages.next)), /*#__PURE__*/React$1.createElement("span", {
+        }, messages.next)), /*#__PURE__*/React.createElement("span", {
           className: "rbc-toolbar-label"
-        }, label), /*#__PURE__*/React$1.createElement("span", {
+        }, label), /*#__PURE__*/React.createElement("span", {
           className: "rbc-btn-group"
         }, this.viewNamesGroup(messages)));
       }
@@ -43555,7 +43555,7 @@
         var view = this.props.view;
         if (viewNames.length > 1) {
           return viewNames.map(function (name) {
-            return /*#__PURE__*/React$1.createElement("button", {
+            return /*#__PURE__*/React.createElement("button", {
               type: "button",
               key: name,
               className: clsx({
@@ -43568,7 +43568,7 @@
       }
     }]);
     return Toolbar;
-  }(React$1.Component);
+  }(React.Component);
 
   /**
    * A specialized version of `_.forEach` for arrays without support for
@@ -45074,10 +45074,10 @@
           localizer: localizer,
           length: length
         });
-        return /*#__PURE__*/React$1.createElement("div", Object.assign({}, elementProps, {
+        return /*#__PURE__*/React.createElement("div", Object.assign({}, elementProps, {
           className: clsx(className, 'rbc-calendar', props.rtl && 'rbc-rtl'),
           style: style
-        }), toolbar && /*#__PURE__*/React$1.createElement(CalToolbar, {
+        }), toolbar && /*#__PURE__*/React.createElement(CalToolbar, {
           date: current,
           view: view,
           views: viewNames,
@@ -45085,7 +45085,7 @@
           onView: this.handleViewChange,
           onNavigate: this.handleNavigate,
           localizer: localizer
-        }), /*#__PURE__*/React$1.createElement(View, Object.assign({}, props, {
+        }), /*#__PURE__*/React.createElement(View, Object.assign({}, props, {
           events: events,
           backgroundEvents: backgroundEvents,
           date: current,
@@ -45195,7 +45195,7 @@
       }
     }]);
     return Calendar;
-  }(React$1.Component);
+  }(React.Component);
   Calendar.defaultProps = {
     events: [],
     backgroundEvents: [],

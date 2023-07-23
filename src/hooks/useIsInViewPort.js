@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, cloneElement } from 'react'
+import React, { useState, useRef, useEffect, cloneElement } from 'react'
 
 const InViewPort = (props) => {
   const [inView, setInView] = useState(false)
