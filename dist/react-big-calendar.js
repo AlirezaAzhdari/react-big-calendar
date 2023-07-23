@@ -35744,6 +35744,41 @@
     }, [ref, callback]);
   }
 
+  var InViewPort = function InViewPort(props) {
+    var _useState = reactExports.useState(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      inView = _useState2[0],
+      setInView = _useState2[1];
+    var ref = reactExports.useRef(null);
+    reactExports.useEffect(function () {
+      var observer = new IntersectionObserver(function (_ref) {
+        var _ref2 = _slicedToArray(_ref, 1),
+          entry = _ref2[0];
+        setInView(entry.isIntersecting);
+      }, {
+        rootMargin: '100px 0px 100px 0px',
+        root: document.querySelector('.rbc-time-content')
+      });
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+      return function () {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      };
+    }, []);
+    var cloned = /*#__PURE__*/reactExports.cloneElement(props.children, {
+      itemRef: ref
+    });
+    if (inView) return cloned;
+    return /*#__PURE__*/React.createElement("div", Object.assign({
+      className: props.className
+    }, props.groupProps, {
+      ref: ref
+    }));
+  };
+
   var _excluded$7 = ["style", "className", "event", "selected", "isAllDay", "onSelect", "onDoubleClick", "onKeyPress", "localizer", "continuesPrior", "continuesAfter", "accessors", "getters", "children", "components", "slotStart", "slotEnd"];
   var EventCell = /*#__PURE__*/function (_React$Component) {
     _inherits(EventCell, _React$Component);
@@ -35799,7 +35834,7 @@
         }) : title);
         return /*#__PURE__*/React.createElement(EventWrapper, Object.assign({}, this.props, {
           type: "date"
-        }), /*#__PURE__*/React.createElement("div", Object.assign({}, props, {
+        }), /*#__PURE__*/React.createElement(InViewPort, null, /*#__PURE__*/React.createElement("div", Object.assign({}, props, {
           tabIndex: 0,
           style: _objectSpread2(_objectSpread2({}, userProps.style), style),
           className: clsx('rbc-event', className, userProps.className, {
@@ -35817,7 +35852,7 @@
           onKeyPress: function onKeyPress(e) {
             return _onKeyPress && _onKeyPress(event, e);
           }
-        }), typeof children === 'function' ? children(content) : content));
+        }), typeof children === 'function' ? children(content) : content)));
       }
     }]);
     return EventCell;
@@ -41837,41 +41872,6 @@
     }
     return algorithm.apply(this, arguments);
   }
-
-  var InViewPort = function InViewPort(props) {
-    var _useState = reactExports.useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      inView = _useState2[0],
-      setInView = _useState2[1];
-    var ref = reactExports.useRef(null);
-    reactExports.useEffect(function () {
-      var observer = new IntersectionObserver(function (_ref) {
-        var _ref2 = _slicedToArray(_ref, 1),
-          entry = _ref2[0];
-        setInView(entry.isIntersecting);
-      }, {
-        rootMargin: '100px 0px 100px 0px',
-        root: document.querySelector('.rbc-time-content')
-      });
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-      return function () {
-        if (ref.current) {
-          observer.unobserve(ref.current);
-        }
-      };
-    }, []);
-    var cloned = /*#__PURE__*/reactExports.cloneElement(props.children, {
-      itemRef: ref
-    });
-    if (inView) return cloned;
-    return /*#__PURE__*/React.createElement("div", Object.assign({
-      className: props.className
-    }, props.groupProps, {
-      ref: ref
-    }));
-  };
 
   var TimeSlotGroup = /*#__PURE__*/function (_Component) {
     _inherits(TimeSlotGroup, _Component);
