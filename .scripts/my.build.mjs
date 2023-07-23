@@ -17,8 +17,7 @@ await $`rollup --config rollup.config.mjs --environment NODE_ENV:production`
 
 console.log(chalk.blue(`Compiling 'lib' js files`))
 // build files used for overrides
-await $`set NODE_ENV=production RBC_CJS_BUILD=true npx babel src --out-dir lib`
-//await $`npx babel src --out-dir lib`
+await $`npx babel src --out-dir lib`
 console.log(chalk.blue(`Copying SASS files to 'lib'`))
 // and since we don't currently use CSS modules...
 await fs.copy('./src/sass', './lib/sass')

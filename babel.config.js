@@ -1,6 +1,7 @@
 module.exports = function (api) {
   //api.cache(false)
-
+  process.env.RBC_CJS_BUILD = 'true'
+  process.env.NODE_ENV = 'production'
   const isCJSBuild = process.env.RBC_CJS_BUILD === 'true'
   const isESMBuild = process.env.RBC_ESM_BUILD === 'true'
   const optionalPlugins = []

@@ -1,6 +1,6 @@
 {
   "name": "react-big-calendar",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "description": "Calendar! with events",
   "author": {
     "name": "Jason Quense",
@@ -34,7 +34,7 @@
     "full calendar"
   ],
   "scripts": {
-    "build": "zx .scripts/build.mjs",
+    "build": "zx .scripts/my.build.mjs",
     "build-storybook": "build-storybook",
     "lint": "NODE_ENV=development eslint src test",
     "prepare": "is-ci || husky install",
@@ -109,6 +109,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.7",
+    "caniuse-lite": "^1.0.30001517",
     "clsx": "^1.2.1",
     "date-arithmetic": "^4.1.0",
     "dayjs": "^1.11.7",
