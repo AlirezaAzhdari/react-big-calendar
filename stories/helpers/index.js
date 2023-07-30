@@ -53,14 +53,14 @@ export const events = [
   {
     title: 'test larger',
     start: moment().startOf('day').add(5, 'hours').toDate(),
-    end: moment().startOf('day').add(10, 'hours').toDate(),
+    end: moment().startOf('day').add(5, 'hours').add(10, 'minutes').toDate(),
     allDay: false,
   },
 
   {
     title: 'test larger',
     start: moment().startOf('day').add(15, 'hours').toDate(),
-    end: moment().startOf('day').add(23, 'hours').toDate(),
+    end: moment().startOf('day').add(15, 'hours').add(5, 'minutes').toDate(),
     allDay: false,
   },
   {

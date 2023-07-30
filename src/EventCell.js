@@ -2,8 +2,6 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import clsx from 'clsx'
 
-import UseIsInViewPort from './hooks/useIsInViewPort'
-
 class EventCell extends React.Component {
   render() {
     let {
@@ -62,24 +60,22 @@ class EventCell extends React.Component {
 
     return (
       <EventWrapper {...this.props} type="date">
-        <UseIsInViewPort>
-          <div
-            {...props}
-            tabIndex={0}
-            style={{ ...userProps.style, ...style }}
-            className={clsx('rbc-event', className, userProps.className, {
-              'rbc-selected': selected,
-              'rbc-event-allday': showAsAllDay,
-              'rbc-event-continues-prior': continuesPrior,
-              'rbc-event-continues-after': continuesAfter,
-            })}
-            onClick={(e) => onSelect && onSelect(event, e)}
-            onDoubleClick={(e) => onDoubleClick && onDoubleClick(event, e)}
-            onKeyPress={(e) => onKeyPress && onKeyPress(event, e)}
-          >
-            {typeof children === 'function' ? children(content) : content}
-          </div>
-        </UseIsInViewPort>
+        <div
+          {...props}
+          tabIndex={0}
+          style={{ ...userProps.style, ...style }}
+          className={clsx('rbc-event', className, userProps.className, {
+            'rbc-selected': selected,
+            'rbc-event-allday': showAsAllDay,
+            'rbc-event-continues-prior': continuesPrior,
+            'rbc-event-continues-after': continuesAfter,
+          })}
+          onClick={(e) => onSelect && onSelect(event, e)}
+          onDoubleClick={(e) => onDoubleClick && onDoubleClick(event, e)}
+          onKeyPress={(e) => onKeyPress && onKeyPress(event, e)}
+        >
+          {typeof children === 'function' ? children(content) : content}
+        </div>
       </EventWrapper>
     )
   }

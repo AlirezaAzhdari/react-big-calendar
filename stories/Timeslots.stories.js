@@ -25,7 +25,7 @@ SelectableStep15x4Slot.args = {
   defaultDate: new Date(),
   selectable: true,
   timeslots: 4,
-  step: 15,
+  step: 1.25,
   events,
   onSelectEvent: action('event selected'),
   onSelectSlot: action('slot selected'),
